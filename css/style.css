@@ -268,11 +268,6 @@ a:hover{ text-decoration:underline; }
   margin-right: 0;
 }
 
-.nav-theme-label{
-  color: var(--nav-link);
-  font-size: 0.85em;
-}
-
 /* Subtle hover panel on nav items. */
 .nav-links a:hover{
   background: var(--nav-link-hover-bg);
@@ -682,10 +677,7 @@ li{
     margin-top: 4px;
     padding-top: 12px;
     border-top: 1px solid color-mix(in srgb, var(--nav-text) 24%, transparent);
-    justify-content: space-between;
-  }
-  .nav-theme-label{
-    font-size: 0.9em;
+    justify-content: flex-start;
   }
   .nav-backdrop{
     display: block;
