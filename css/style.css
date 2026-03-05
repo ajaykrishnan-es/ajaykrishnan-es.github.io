@@ -621,6 +621,10 @@ li{
   body.nav-open{
     overflow: hidden;
   }
+  .site-nav{
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
   body{
     font-size: 18px;
   }
@@ -651,7 +655,8 @@ li{
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
-    background: var(--nav-bg);
+    background-color: var(--nav-bg);
+    opacity: 1;
     border-right: 1px solid color-mix(in srgb, var(--nav-text) 24%, transparent);
     box-shadow: 0 10px 36px rgba(0, 0, 0, 0.35);
     transform: translateX(-108%);
