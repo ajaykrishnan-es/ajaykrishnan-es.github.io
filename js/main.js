@@ -91,10 +91,36 @@ async function injectNav() {
   // Mobile toggle
   const toggle = mount.querySelector(".nav-toggle");
   const links = mount.querySelector("#nav-links");
-  if (toggle && links) {
-    toggle.addEventListener("click", () => {
-      const isOpen = links.classList.toggle("open");
+  const backdrop = mount.querySelector(".nav-backdrop");
+  if (toggle && links && backdrop) {
+    const setNavOpen = (isOpen) => {
+      links.classList.toggle("open", isOpen);
+      backdrop.classList.toggle("open", isOpen);
+      toggle.classList.toggle("open", isOpen);
       toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+      document.body.classList.toggle("nav-open", isOpen);
+    };
+
+    toggle.addEventListener("click", () => {
+      setNavOpen(!links.classList.contains("open"));
+    });
+
+    backdrop.addEventListener("click", () => {
+      setNavOpen(false);
+    });
+
+    const navAnchors = Array.from(links.querySelectorAll("a"));
+    for (const anchor of navAnchors) {
+      anchor.addEventListener("click", () => {
+        setNavOpen(false);
+      });
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        setNavOpen(false);
+      }
     });
   }
 

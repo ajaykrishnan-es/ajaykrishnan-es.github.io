@@ -143,6 +143,18 @@ a:hover{ text-decoration:underline; }
   padding: 0 18px;
 }
 
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Sticky top navigation bar shell. */
 .site-nav{
   position: sticky;
@@ -182,17 +194,41 @@ a:hover{ text-decoration:underline; }
   display: none;
   border: 1px solid var(--border);
   border-radius: 10px;
-  background: transparent;
+  background: color-mix(in srgb, var(--panel) 80%, transparent);
   color: var(--nav-link);
-  padding: 7px 10px;
+  width: 42px;
+  height: 36px;
   font: inherit;
-  font-size: 0.82em;
-  line-height: 1;
+  line-height: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
   cursor: pointer;
 }
 
 .nav-toggle:hover{
   background: var(--nav-link-hover-bg);
+}
+
+.nav-toggle__bar{
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.nav-toggle.open .nav-toggle__bar:nth-child(2){
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open .nav-toggle__bar:nth-child(3){
+  opacity: 0;
+}
+
+.nav-toggle.open .nav-toggle__bar:nth-child(4){
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Horizontal nav list; pushed right with margin-left:auto. */
@@ -213,25 +249,28 @@ a:hover{ text-decoration:underline; }
   margin-right: 12px;
 }
 
-/* Add one trailing separator after the last nav item (before the theme toggle). */
-.nav-links::after{
-  content: "|";
-  display: inline-flex;
-  align-items: center;
-  align-self: center;
-  line-height: 1;
-  color: var(--nav-separator);
-  opacity: 1;
-  margin-left: 2px;
-  transform: translateY(-1px);
-}
-
 /* Click target sizing for nav links. */
 .nav-links a{
   color: var(--nav-link);
   display:inline-block;
   padding: 8px 10px;
   border-radius: 10px;
+}
+
+.nav-theme-item{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 4px;
+}
+
+.nav-theme-item::before{
+  margin-right: 0;
+}
+
+.nav-theme-label{
+  color: var(--nav-link);
+  font-size: 0.85em;
 }
 
 /* Subtle hover panel on nav items. */
@@ -289,6 +328,10 @@ a:hover{ text-decoration:underline; }
   color: var(--toggle-icon);
   font-size: 14px;
   line-height: 1;
+}
+
+.nav-backdrop{
+  display: none;
 }
 
 /* Shift thumb to the right in dark state. */
@@ -580,11 +623,14 @@ li{
 
 /* Mobile layout adjustments for nav + publication rows. */
 @media (max-width: 760px){
+  body.nav-open{
+    overflow: hidden;
+  }
   body{
     font-size: 18px;
   }
   .nav-inner{
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 10px;
     padding: 10px 14px;
   }
@@ -594,39 +640,69 @@ li{
     padding-right: 4px;
     font-size: 0.95em;
   }
-  .theme-toggle{
-    margin-left: auto;
-  }
   .nav-toggle{
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    z-index: 80;
   }
   .nav-links{
-    display: none;
-    width: 100%;
-    margin-left: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: min(82vw, 320px);
+    margin: 0;
+    padding: 84px 18px 24px;
     flex-direction: column;
     align-items: stretch;
-    gap: 8px;
-    margin-top: 4px;
-    padding-top: 8px;
-    border-top: 1px solid color-mix(in srgb, var(--nav-text) 24%, transparent);
+    gap: 10px;
+    background: color-mix(in srgb, var(--nav-bg) 97%, transparent);
+    border-right: 1px solid color-mix(in srgb, var(--nav-text) 24%, transparent);
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.35);
+    transform: translateX(-108%);
+    transition: transform .24s ease;
+    z-index: 78;
+    pointer-events: none;
   }
   .nav-links.open{
-    display: flex;
+    transform: translateX(0);
+    pointer-events: auto;
   }
   .nav-links li + li::before{
-    content: none;
-  }
-  .nav-links::after{
     content: none;
   }
   .nav-links a{
     display: block;
     text-align: left;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 8px 0;
+    border-radius: 0;
+  }
+  .nav-theme-item{
+    margin-left: 0;
+    margin-top: 4px;
+    padding-top: 12px;
+    border-top: 1px solid color-mix(in srgb, var(--nav-text) 24%, transparent);
+    justify-content: space-between;
+  }
+  .nav-theme-label{
+    font-size: 0.9em;
+  }
+  .nav-backdrop{
+    display: block;
+    position: fixed;
+    inset: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.34);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .24s ease;
+    z-index: 76;
+  }
+  .nav-backdrop.open{
+    opacity: 1;
+    pointer-events: auto;
   }
   main{
     padding: 18px 0 32px 0;
