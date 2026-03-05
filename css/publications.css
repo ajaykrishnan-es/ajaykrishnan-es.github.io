@@ -1,0 +1,110 @@
+/* Publications page and cards */
+.pub-item{ margin-top: 10px; }
+
+.pub-shell{
+  background: var(--pub-fill);
+  border: 1px solid var(--pub-border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.pub-collapsible[data-expanded="true"] .pub-shell{
+  border-color: color-mix(in srgb, var(--pub-border) 65%, var(--link));
+}
+
+.pub-head{
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.pub-venue{
+  margin-left: auto;
+  white-space: nowrap;
+  color: var(--text);
+  font-weight: 600;
+  font-style: normal;
+}
+
+.pub-meta{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pub-authors{
+  color: var(--muted);
+}
+
+.pub-award-row{
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0px;
+}
+
+.award-note{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  color: var(--award-text);
+  font-weight: 650;
+  font-style: italic;
+}
+
+.pub-links{
+  margin-top: 0px;
+}
+
+.pub-abstract-toggle{
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: var(--link);
+  cursor: pointer;
+}
+
+.pub-abstract-toggle:hover{
+  text-decoration: underline;
+}
+
+:root[data-theme="light"] .pub-links a{
+  color: #8a4b1f;
+}
+
+:root[data-theme="light"] .pub-links .pub-abstract-toggle{
+  color: #8a4b1f;
+}
+
+:root[data-theme="light"] .pub-links a:hover{
+  color: #6f3714;
+}
+
+:root[data-theme="light"] .pub-links .pub-abstract-toggle:hover{
+  color: #6f3714;
+}
+
+.pub-abstract{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .25s ease;
+}
+
+.pub-abstract p{
+  margin: 10px 0 0;
+  font-size: 0.94em;
+  line-height: 1.5;
+}
+
+.pub-collapsible[data-expanded="true"] .pub-abstract{
+  max-height: 500px;
+  margin: 14px 8px 0;
+  padding-top: 4px;
+  border-top: 1px solid color-mix(in srgb, var(--pub-border) 78%, transparent);
+}
+
+.pub-collapsible[data-expanded="true"] .pub-abstract p{
+  margin-top: 8px;
+}
