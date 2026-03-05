@@ -1,4 +1,5 @@
 const THEME_STORAGE_KEY = "theme";
+const GA_MEASUREMENT_ID = "G-HHE09EM7PN";
 
 function getInitialTheme() {
   try {
@@ -75,6 +76,25 @@ function initLastUpdated() {
   }
 }
 
+function initAnalytics() {
+  const id = GA_MEASUREMENT_ID.trim();
+  if (!/^G-[A-Z0-9]+$/.test(id)) return;
+  if (window.gtag) return;
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () {
+    window.dataLayer.push(arguments);
+  };
+
+  window.gtag("js", new Date());
+  window.gtag("config", id, { anonymize_ip: true });
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
+  document.head.appendChild(script);
+}
+
 async function injectNav() {
   const mount = document.getElementById("nav-mount");
   if (!mount) return;
@@ -142,6 +162,7 @@ async function injectNav() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  initAnalytics();
   injectNav();
   initPublicationCards();
   initLastUpdated();
