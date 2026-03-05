@@ -102,7 +102,7 @@
 
 @font-face {
   font-family: 'Crimson Pro';
-  src: url('/fonts/Crimson_Pro/CrimsonPro-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/fonts/Crimson_Pro/CrimsonPro-VariableFont_wght.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
@@ -123,12 +123,6 @@ body{
   color: var(--text);
   font-size: 20px;
   line-height: 1.6;
-}
-
-img,
-svg,
-video{
-  max-width: 100%;
 }
 
 /* Global link style tokenized by theme variables. */
@@ -175,23 +169,6 @@ a:hover{ text-decoration:underline; }
 
 .nav-brand:hover{
   text-decoration: none;
-  background: var(--nav-link-hover-bg);
-}
-
-.nav-toggle{
-  display: none;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: transparent;
-  color: var(--nav-link);
-  padding: 7px 10px;
-  font: inherit;
-  font-size: 0.82em;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.nav-toggle:hover{
   background: var(--nav-link-hover-bg);
 }
 
@@ -344,12 +321,6 @@ main{
   border: 1px solid var(--border);
   background: color-mix(in srgb, var(--panel) 72%, transparent);
   color: var(--muted);
-}
-
-.home-icons{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
 }
 
 /* Hover contrast for social icon buttons. */
@@ -559,11 +530,6 @@ main{
 /* Small-caps helper for terms like "Coloring". */
 .sc{ font-variant: small-caps; }
 
-p,
-li{
-  overflow-wrap: anywhere;
-}
-
 /* Footer styling shared across all pages. */
 .footer{
   margin-top: auto;
@@ -580,78 +546,17 @@ li{
 
 /* Mobile layout adjustments for nav + publication rows. */
 @media (max-width: 760px){
-  body{
-    font-size: 18px;
-  }
-  .nav-inner{
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px 14px;
-  }
-  .nav-brand{
-    min-width: 0;
-    padding-left: 4px;
-    padding-right: 4px;
-    font-size: 0.95em;
-  }
-  .theme-toggle{
-    margin-left: auto;
-  }
-  .nav-toggle{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
+  /* Allow nav contents to wrap when width is tight. */
+  .nav-inner{ flex-wrap: wrap; }
+  /* Keep nav links on their own row and right-aligned on small screens. */
   .nav-links{
-    display: none;
     width: 100%;
     margin-left: 0;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    margin-top: 4px;
-    padding-top: 8px;
-    border-top: 1px solid color-mix(in srgb, var(--nav-text) 24%, transparent);
-  }
-  .nav-links.open{
-    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
   }
   .nav-links li + li::before{
-    content: none;
-  }
-  .nav-links::after{
-    content: none;
-  }
-  .nav-links a{
-    display: block;
-    text-align: left;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  main{
-    padding: 18px 0 32px 0;
-  }
-  .hero{
-    padding: 26px 0 10px;
-  }
-  .hero h1{
-    margin-bottom: 12px;
-    font-size: clamp(28px, 8vw, 38px);
-  }
-  .hero .intro{
-    margin-top: 24px;
-  }
-  .hero p{
-    max-width: 100%;
-  }
-  .section{
-    padding: 14px 6px;
-  }
-  .section h2{
-    font-size: clamp(30px, 8vw, 38px);
-  }
-  .section h3{
-    font-size: clamp(22px, 6.2vw, 28px);
+    margin-right: 10px;
   }
   /* Stack publication heading row vertically on mobile. */
   .pub-head{
@@ -661,7 +566,6 @@ li{
   /* Remove desktop push-right behavior for venue on stacked layout. */
   .pub-venue{
     margin-left: 0;
-    white-space: normal;
   }
   /* Allow metadata row to wrap naturally on narrow widths. */
   .pub-meta{
@@ -671,33 +575,5 @@ li{
   /* Keep award highlight spacing consistent on mobile. */
   .award-note{
     margin: 0;
-  }
-  .pub-shell{
-    padding: 12px;
-  }
-  .pub-links{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-  }
-  .footer{
-    font-size: 13px;
-    padding: 16px 0;
-  }
-}
-
-@media (max-width: 480px){
-  .container{
-    padding: 0 14px;
-  }
-  .nav-inner{
-    padding-left: 14px;
-    padding-right: 14px;
-  }
-  .nav-brand{
-    font-size: 0.9em;
-  }
-  .hero h1{
-    font-size: clamp(26px, 9vw, 34px);
   }
 }
