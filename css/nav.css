@@ -114,7 +114,6 @@
 
 .nav-links a[aria-current="page"]{
   background: var(--nav-active-bg);
-  border: 1px solid var(--nav-active-border);
 }
 
 .theme-toggle{
