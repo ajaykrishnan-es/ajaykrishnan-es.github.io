@@ -133,3 +133,69 @@ li{
 .footer .container{
   text-align: center;
 }
+
+.not-found{
+  text-align: center;
+  margin-top: 28px;
+}
+
+.not-found h2{
+  margin-top: 0;
+}
+
+.not-found-orbit{
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 14px;
+}
+
+.not-found-orbit span{
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--link);
+  top: 50%;
+  left: 50%;
+  transform-origin: -30px center;
+  animation: orbit 2.4s linear infinite;
+}
+
+.not-found-orbit span:nth-child(2){
+  animation-delay: -.8s;
+}
+
+.not-found-orbit span:nth-child(3){
+  animation-delay: -1.6s;
+}
+
+.not-found-actions{
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.not-found-actions a{
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--panel) 85%, transparent);
+  color: var(--text);
+}
+
+.not-found-actions a:hover{
+  text-decoration: none;
+  background: color-mix(in srgb, var(--panel) 94%, transparent);
+}
+
+@keyframes orbit{
+  from{
+    transform: rotate(0deg) translateX(30px);
+  }
+  to{
+    transform: rotate(360deg) translateX(30px);
+  }
+}
