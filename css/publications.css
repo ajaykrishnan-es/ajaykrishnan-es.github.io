@@ -19,6 +19,10 @@
   gap: 12px;
 }
 
+.pub-head strong{
+  font-weight: 600;
+}
+
 .pub-venue{
   margin-left: auto;
   white-space: nowrap;

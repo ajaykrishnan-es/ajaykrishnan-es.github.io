@@ -23,6 +23,11 @@ video{
 a{ color:var(--link); text-decoration:none; }
 a:hover{ text-decoration:underline; }
 
+b,
+strong{
+  font-weight: 600;
+}
+
 .container{
   max-width: var(--maxw);
   margin: 0 auto;
