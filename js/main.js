@@ -45,12 +45,20 @@ applyTheme(getInitialTheme());
 
 function initPublicationCards() {
   const toggles = document.querySelectorAll(".pub-abstract-toggle");
+  const cards = document.querySelectorAll(".pub-collapsible");
   const syncAbstractHeight = (card) => {
     const abstract = card.querySelector(".pub-abstract");
     if (!abstract) return;
 
     const expanded = card.getAttribute("data-expanded") === "true";
-    abstract.style.maxHeight = expanded ? `${abstract.scrollHeight}px` : "0px";
+    if (!expanded) {
+      abstract.style.maxHeight = "0px";
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      abstract.style.maxHeight = `${abstract.scrollHeight}px`;
+    });
   };
 
   for (const button of toggles) {
@@ -68,8 +76,20 @@ function initPublicationCards() {
     });
   }
 
+  if ("ResizeObserver" in window) {
+    const observer = new ResizeObserver(() => {
+      for (const card of cards) {
+        syncAbstractHeight(card);
+      }
+    });
+
+    for (const card of cards) {
+      const abstract = card.querySelector(".pub-abstract");
+      if (abstract) observer.observe(abstract);
+    }
+  }
+
   window.addEventListener("resize", () => {
-    const cards = document.querySelectorAll(".pub-collapsible");
     for (const card of cards) {
       syncAbstractHeight(card);
     }
