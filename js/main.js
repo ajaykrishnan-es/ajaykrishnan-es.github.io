@@ -45,17 +45,35 @@ applyTheme(getInitialTheme());
 
 function initPublicationCards() {
   const toggles = document.querySelectorAll(".pub-abstract-toggle");
+  const syncAbstractHeight = (card) => {
+    const abstract = card.querySelector(".pub-abstract");
+    if (!abstract) return;
+
+    const expanded = card.getAttribute("data-expanded") === "true";
+    abstract.style.maxHeight = expanded ? `${abstract.scrollHeight}px` : "0px";
+  };
+
   for (const button of toggles) {
     const card = button.closest(".pub-collapsible");
     if (!card) continue;
+
+    syncAbstractHeight(card);
 
     button.addEventListener("click", () => {
       const expanded = card.getAttribute("data-expanded") === "true";
       const next = !expanded;
       card.setAttribute("data-expanded", String(next));
       button.setAttribute("aria-expanded", String(next));
+      syncAbstractHeight(card);
     });
   }
+
+  window.addEventListener("resize", () => {
+    const cards = document.querySelectorAll(".pub-collapsible");
+    for (const card of cards) {
+      syncAbstractHeight(card);
+    }
+  });
 }
 
 function initLastUpdated() {
