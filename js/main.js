@@ -96,23 +96,6 @@ function initPublicationCards() {
   });
 }
 
-function initLastUpdated() {
-  const nodes = document.querySelectorAll(".last-updated");
-  if (!nodes.length) return;
-
-  const parsed = new Date(document.lastModified);
-  if (Number.isNaN(parsed.getTime())) return;
-
-  const formatted = parsed.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-
-  for (const node of nodes) {
-    node.textContent = formatted;
-  }
-}
 
 function initAnalytics() {
   const id = GA_MEASUREMENT_ID.trim();
@@ -138,7 +121,7 @@ async function injectNav() {
   if (!mount) return;
 
   // Use absolute path so it works from subfolders on GitHub Pages.
-  const resp = await fetch("/partials/nav.html?v=" + Date.now(), { cache: "no-store" });;
+  const resp = await fetch("/partials/nav.html");
   if (!resp.ok) {
     mount.innerHTML = "<div class='container small'>Nav failed to load.</div>";
     return;
@@ -203,5 +186,4 @@ document.addEventListener("DOMContentLoaded", () => {
   initAnalytics();
   injectNav();
   initPublicationCards();
-  initLastUpdated();
 });

@@ -6,7 +6,6 @@
   border: 1px solid var(--pub-border);
   border-radius: 12px;
   padding: 14px 16px;
-  cursor: pointer;
 }
 
 .pub-collapsible[data-expanded="true"] .pub-shell{

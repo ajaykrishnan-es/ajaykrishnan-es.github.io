@@ -7,7 +7,7 @@ body{
   display: flex;
   flex-direction: column;
   margin:0;
-  font-family: var(--sans);
+  font-family: var(--serif);
   background: var(--bg);
   color: var(--text);
   font-size: 20px;
