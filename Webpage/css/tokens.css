@@ -1,0 +1,83 @@
+/* Theme tokens and font face */
+:root{
+  --bg: #2a2f38;
+  --panel: #353c48;
+  --text: #f6f8fb;
+  --muted: #cdd3de;
+  --link: #9bbcf3;
+  --border: rgba(255,255,255,.12);
+  --toggle-track: #5f6776;
+  --toggle-thumb-bg: #d7dde8;
+  --toggle-icon: #495063;
+  --pub-fill: color-mix(in srgb, var(--panel) 90%, #404958);
+  --pub-border: #4b5566;
+  --nav-bg: #3c4554;
+  --nav-text: #e8ebf0;
+  --nav-link: #e8ebf0;
+  --nav-link-hover-bg: rgba(255,255,255,.14);
+  --nav-active-bg: rgba(255,255,255,.22);
+  --nav-active-border: rgba(255,255,255,.24);
+  --nav-separator: rgba(232,235,240,.45);
+  --award-bg: rgba(159,173,199,.22);
+  --award-text: #f0f5ff;
+  --maxw: 980px;
+  --serif: 'Crimson Pro', serif;
+}
+
+/* Light theme is defined twice: the @media block prevents a flash of dark theme
+   before JS runs on systems that prefer light; [data-theme="light"] handles the
+   explicit user toggle when the system preference is dark. */
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#fffdfa;
+    --panel:#ffffff;
+    --text:#1f1d19;
+    --muted:#575247;
+    --link:#2b4f81;
+    --border: rgba(86,76,59,.16);
+    --toggle-track: #b7b3aa;
+    --toggle-thumb-bg: #f5f3ee;
+    --toggle-icon: #59554d;
+    --pub-fill: #fdf9f2;
+    --pub-border: #e7dece;
+    --nav-bg: #efe8da;
+    --nav-text: #2f2b24;
+    --nav-link: #2f2b24;
+    --nav-link-hover-bg: rgba(255,255,255,.68);
+    --nav-active-bg: rgba(255,255,255,.82);
+    --nav-active-border: rgba(90,81,63,.25);
+    --nav-separator: rgba(95,85,67,.45);
+    --award-bg: #efe6cf;
+    --award-text: #4f3d1f;
+  }
+}
+
+:root[data-theme="light"]{
+  --bg:#fffdfa;
+  --panel:#ffffff;
+  --text:#1f1d19;
+  --muted:#575247;
+  --link:#2b4f81;
+  --border: rgba(86,76,59,.16);
+  --toggle-track: #b7b3aa;
+  --toggle-thumb-bg: #f5f3ee;
+  --toggle-icon: #59554d;
+  --pub-fill: #fdf9f2;
+  --pub-border: #e7dece;
+  --nav-bg: #efe8da;
+  --nav-text: #2f2b24;
+  --nav-link: #2f2b24;
+  --nav-link-hover-bg: rgba(255,255,255,.68);
+  --nav-active-bg: rgba(255,255,255,.82);
+  --nav-active-border: rgba(90,81,63,.25);
+  --nav-separator: rgba(95,85,67,.45);
+  --award-bg: #efe6cf;
+  --award-text: #4f3d1f;
+}
+
+@font-face {
+  font-family: 'Crimson Pro';
+  src: url('/fonts/Crimson_Pro/CrimsonPro-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 900;
+  font-style: normal;
+}
