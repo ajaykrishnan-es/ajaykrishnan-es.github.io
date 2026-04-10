@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ajaykrishnan-es.github.io/sitemap.xml
