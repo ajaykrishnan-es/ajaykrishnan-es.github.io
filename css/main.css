@@ -41,6 +41,17 @@ main{
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  align-items: center;
+}
+
+.icon-sep{
+  color: var(--muted);
+  opacity: 0.3;
+  font-size: 1.2em;
+  line-height: 1;
+  user-select: none;
+  position: relative;
+  top: -1px;
 }
 
 .icon-link:hover{
