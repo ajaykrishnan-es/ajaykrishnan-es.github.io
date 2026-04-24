@@ -6,17 +6,55 @@ main{
 }
 
 .hero{
-  padding: 50px 0;
+  padding: 18px 0 50px;
+}
+
+.hero-inner{
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.hero-left{
+  flex: 0 0 auto;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-top: 10px;
+}
+
+
+.hero-right{
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.hero-right p:first-child{
+  margin-top: 0;
+}
+
+.profile-photo{
+  width: 340px;
+  height: 420px;
+  object-fit: cover;
+  object-position: 30% 12%;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  display: block;
 }
 
 .hero h1{
-  margin: 0 0 15px;
-  font-size: clamp(20px, 4vw, 48px);
+  font-size: clamp(28px, 5vw, 64px);
   line-height:1.15;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 .hero .intro {
-  margin-top: 40px;
+  margin-top: 0;
 }
 
 .hero p{
@@ -73,7 +111,7 @@ main{
 }
 
 .section h2{
-  font-size: clamp(32px, 4.6vw, 44px);
+  font-size: clamp(28px, 5vw, 64px);
   line-height: 1.12;
   margin-top: 14px;
   margin-bottom: 14px;

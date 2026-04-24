@@ -31,7 +31,7 @@ strong{
 .container{
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 18px;
+  padding: 0 32px;
 }
 
 .sr-only{

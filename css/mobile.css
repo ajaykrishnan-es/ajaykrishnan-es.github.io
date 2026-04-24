@@ -109,6 +109,27 @@
     padding: 26px 0 10px;
   }
 
+  .hero-inner{
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .hero-left{
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-photo{
+    width: 160px;
+    height: 190px;
+  }
+
+  .home-icons{
+    justify-content: center;
+  }
+
   .hero h1{
     margin-bottom: 12px;
     font-size: clamp(28px, 8vw, 38px);
