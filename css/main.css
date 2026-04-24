@@ -11,7 +11,7 @@ main{
 
 .hero-inner{
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   gap: 48px;
 }
 
@@ -37,13 +37,13 @@ main{
 
 .profile-photo{
   width: 340px;
-  flex: 1;
-  min-height: 420px;
+  height: 420px;
   object-fit: cover;
   object-position: 30% 12%;
   border-radius: 12px;
   border: 2px solid var(--border);
   display: block;
+  padding-top: 10px;
 }
 
 .hero h1{
