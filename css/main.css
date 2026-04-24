@@ -36,9 +36,9 @@ main{
 }
 
 .profile-photo{
-  width: 440px;
+  width: 340px;
   flex: 1;
-  min-height: 560px;
+  min-height: 420px;
   object-fit: cover;
   object-position: 30% 12%;
   border-radius: 12px;
