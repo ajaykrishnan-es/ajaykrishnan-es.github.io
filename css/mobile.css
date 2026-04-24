@@ -122,17 +122,24 @@
   }
 
   .profile-photo{
-    width: 160px;
-    height: 190px;
+    width: min(220px, 62vw);
+    height: auto;
+    aspect-ratio: 340 / 420;
+    min-height: unset;
+    flex: none;
+    border-radius: 12px;
   }
 
   .home-icons{
     justify-content: center;
+    width: 100%;
   }
 
   .hero h1{
     margin-bottom: 12px;
     font-size: clamp(28px, 8vw, 38px);
+    text-align: center;
+    width: 100%;
   }
 
   .hero .intro{
