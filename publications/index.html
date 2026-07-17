@@ -121,12 +121,13 @@
         </div>
         <div id="pub-abs-6" class="pub-abstract">
           <p class="small">
-            In the Rectangle Stabbing problem, we are given a set of axis-parallel rectangles in the plane and a
-            parameter <em>k</em>, and the goal is to find a set of at most <em>k</em> axis-parallel lines that
-            stab all rectangles. The problem admits a polynomial-time 2-approximation, and under standard
+            In the <span class="sc">Rectangle Stabbing</span> problem, we are given a set of axis-parallel rectangles
+            in the plane and a parameter <em>k</em>, and the goal is to find a set of at most <em>k</em> axis-parallel
+            lines that stab all rectangles. The problem admits a polynomial-time 2-approximation, and under standard
             complexity assumptions it is unlikely to admit an FPT exact algorithm or an FPT approximation
-            scheme. We give the first parameterized approximation algorithm for Rectangle Stabbing with ratio
-            strictly better than 2: our algorithm computes a solution of size at most 7<em>k</em>/4 in time
+            scheme. We give the first parameterized approximation algorithm for
+            <span class="sc">Rectangle Stabbing</span> with ratio strictly better than 2: our algorithm computes a
+            solution of size at most 7<em>k</em>/4 in time
             <em>k</em><sup>O(<em>k</em>)</sup>(|L||R|)<sup>O(1)</sup>. We complement this with a hardness
             result showing that, unless FPT = W[1], no parameterized algorithm can achieve a
             (5/4 &minus; &epsilon;)-approximation for any &epsilon; &gt; 0.
@@ -216,24 +217,19 @@
           <span class="pub-authors">with Daniel Lokshtanov</span>
         </div>
         <div class="pub-links">
-           <button class="pub-abstract-toggle" type="button" aria-expanded="false" aria-controls="pub-abs-2">[abstract]</button> ·
+           <button class="pub-abstract-toggle" type="button" aria-expanded="false" aria-controls="pub-abs-2">[tl;dr]</button> ·
           <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.FSTTCS.2025.29" target="_blank" rel="noopener noreferrer">[paper]</a> ·
            <a href="/slides/beyond-exact-fairness-fsttcs-2025.pdf" target="_blank" rel="noopener noreferrer">[slides]</a>
         </div>
         <div id="pub-abs-2" class="pub-abstract">
           <p class="small">
-            We study the problem of Envy-Free Incomplete Connected Fair Division, where exactly p vertices of an
-            undirected graph must be allocated to agents such that each agent receives a connected share and does not
-            envy another agent’s share. Focusing on agents with additive valuations, we show that the problem remains
-            computationally hard when parameterized by p and the number of agents. This result holds even for star
-            graphs and with the input numbers given in unary representation, thereby resolving an open problem posed
-            by Gahlawat and Zehavi (FSTTCS 2023).
-          </p>
-          <p class="small">
-            In stark contrast, we show that if one is willing to tolerate even the slightest amount of envy, then the
-            problem becomes efficient with respect to the natural parameters. Specifically, we design an Efficient
-            Parameterized Approximation Scheme parameterized by p and the number of agent types. Our algorithm works
-            on general graphs and remains efficient even when the input numbers are provided in binary representation.
+            We study <span class="sc">Envy-Free Incomplete Connected Fair Division</span>, where exactly p vertices of an undirected graph
+            must be allocated to agents so that each agent gets a connected share and envies no one. For agents with
+            additive valuations, we show the problem stays computationally hard when parameterized by p and the
+            number of agents, even for star graphs with unary input numbers, resolving an open problem of Gahlawat
+            and Zehavi (FSTTCS 2023). In stark contrast, tolerating even the slightest amount of envy makes the
+            problem efficient: we give an Efficient Parameterized Approximation Scheme parameterized by p and the
+            number of agent types, working on general graphs and remaining efficient even with binary input numbers.
           </p>
         </div>
       </div>
