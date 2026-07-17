@@ -81,27 +81,19 @@
           <span class="pub-authors">with Maria Chudnovsky and Daniel Lokshtanov</span>
         </div>
         <div class="pub-links">
-          <button class="pub-abstract-toggle" type="button" aria-expanded="false" aria-controls="pub-abs-4">[abstract]</button> ·
+          <button class="pub-abstract-toggle" type="button" aria-expanded="false" aria-controls="pub-abs-4">[tl;dr]</button> ·
           <a href="https://arxiv.org/pdf/2510.15074" target="_blank" rel="noopener noreferrer">[paper]</a>
         </div>
         <div id="pub-abs-4" class="pub-abstract">
           <p class="small">
-            An independent set in a graph G is a set of pairwise non-adjacent vertices. A tree decomposition of G is
-            a pair (T, χ) where T is a tree and χ: V(T) → 2<sup>V(G)</sup> is a function satisfying the following two
-            axioms: for every edge uv in E(G), there is an x in V(T) such that {u, v} ⊆ χ(x), and for every vertex u
-            in V(G), the set {x in V(T) : u in χ(x)} induces a non-empty and connected subtree of T. The sets χ(x)
-            for x in V(T) are called the bags of the tree decomposition. The tree-independence number of G is the
-            minimum, over all tree decompositions of G, of the size of the maximum independent set of the graph
-            induced by a bag of the decomposition.
-          </p>
-          <p class="small">
-            The study of graph classes with bounded tree-independence number has attracted much attention in recent
-            years, in part due to its important algorithmic implications. A conjecture of Dallard, Milanič, and
-            Storgel, connecting tree-independence number to the classical notion of treewidth, was one of the
-            motivating problems in the area. This conjecture was recently disproved, but here we prove a slight
-            variant that retains much of the algorithmic significance. As part of the proof, we introduce the notion
-            of independence-containers, which can be viewed as a generalization of the set of all maximal cliques of a
-            graph, and is of independent interest.
+            The Dallard&#8211;Milani&#269;&#8211;&#352;torgel conjecture proposed that if a hereditary graph class has
+            treewidth bounded by some function of clique number, then it has bounded tree-independence number. This
+            conjecture was recently disproved. We prove a
+            poly-logarithmic variant: treewidth bounded by a polynomial in (clique number &#215; log <em>n</em>) is
+            equivalent to tree-independence number bounded by (log <em>n</em>)<sup>c</sup> alone. This retains many
+            of the algorithmic implications of the original conjecture. Along the way, we introduce
+            independence-containers, a generalization of the set of all maximal cliques of a graph, which we believe
+            is of independent interest.
           </p>
         </div>
       </div>
