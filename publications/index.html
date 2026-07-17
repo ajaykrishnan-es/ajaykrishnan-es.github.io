@@ -27,36 +27,22 @@
           <span class="pub-authors">with Maria Chudnovsky, Julien Codsi, and Daniel Lokshtanov</span>
         </div>
         <div class="pub-links">
-          <button class="pub-abstract-toggle" type="button" aria-expanded="false" aria-controls="pub-abs-7">[abstract]</button> ·
+          <button class="pub-abstract-toggle" type="button" aria-expanded="false" aria-controls="pub-abs-7">[tl;dr]</button> ·
           <a href="https://arxiv.org/abs/2607.12090" target="_blank" rel="noopener noreferrer">[paper]</a>
         </div>
         <div id="pub-abs-7" class="pub-abstract">
           <p class="small">
-            An independent set in a graph <em>G</em> is a set of pairwise non-adjacent vertices. A tree decomposition
-            of <em>G</em> is a pair (<em>T</em>, &#967;) where <em>T</em> is a tree and &#967;: <em>V</em>(<em>T</em>)
-            &#8594; 2<sup><em>V</em>(<em>G</em>)</sup> is a function satisfying two axioms: for every edge
-            <em>uv</em> &#8712; <em>E</em>(<em>G</em>) there is an <em>x</em> &#8712; <em>V</em>(<em>T</em>) such that
-            {<em>u</em>, <em>v</em>} &#8838; &#967;(<em>x</em>), and for every vertex <em>u</em> &#8712;
-            <em>V</em>(<em>G</em>) the set {<em>x</em> &#8712; <em>V</em>(<em>T</em>) | <em>u</em> &#8712;
-            &#967;(<em>x</em>)} induces a non-empty and connected subtree of <em>T</em>. The sets &#967;(<em>x</em>)
-            for <em>x</em> &#8712; <em>V</em>(<em>T</em>) are called the bags of the tree decomposition. The
-            tree-independence number of <em>G</em> is the minimum taken over all tree decompositions of <em>G</em>
-            of the maximum size of an independent set of the graph induced by a bag of the decomposition. A graph
-            <em>H</em> is an induced minor of a graph <em>G</em> if a graph isomorphic to <em>H</em> can be obtained
-            from <em>G</em> by vertex deletions and edge contractions. We prove that for every <em>t</em> &#8712;
-            &#8469; there exists an &#949; &gt; 0 such that every graph <em>G</em> either contains the complete
-            bipartite graph <em>K</em><sub><em>t</em>,<em>t</em></sub> or the wall <em>W</em><sub><em>t</em>&#215;<em>t</em></sub>
-            as an induced minor, or has tree-independence at most <em>O</em>(2<sup><em>O</em>((log <em>n</em>)<sup>1-&#949;</sup>)</sup>).
-            This leads to algorithms with running time 2<sup><em>n</em><sup>o(1)</sup></sup>, for a wide range of
-            problems on {<em>K</em><sub><em>t</em>,<em>t</em></sub>, <em>W</em><sub><em>t</em>&#215;<em>t</em></sub>}-induced
-            minor free graphs. Our result is a substantial generalization of existing bounds for the
-            tree-independence and tree-width on various graph classes, and a partial resolution of the conjecture of
-            Chudnovsky, E S, and Lokshtanov [Arxiv, 2025] that {<em>K</em><sub><em>t</em>,<em>t</em></sub>,
-            <em>W</em><sub><em>t</em>&#215;<em>t</em></sub>}-induced minor free graphs have poly-logarithmic tree
-            independence number. The generality comes at the cost of a sub-polynomial, rather than poly-logarithmic
-            upper bound. Our result leads to a complete classification of induced-minor closed classes into ones
-            that have sub-polynomial tree-independence, tree-independence equal to &#927;&#771;(&#8730;<em>n</em>),
-            and linear tree-independence.
+            We classify induced-minor-closed graph classes by tree-independence number. Classes containing
+            <em>K</em><sub><em>t</em>,<em>t</em></sub> and <em>W</em><sub><em>t</em>&#215;<em>t</em></sub> as induced
+            minors for every <em>t</em> need &#920;(<em>n</em>); classes forbidding
+            <em>K</em><sub><em>t</em>,<em>t</em></sub> for some <em>t</em> have &#920;&#771;(&#8730;<em>n</em>); and classes
+            forbidding both <em>K</em><sub><em>t</em>,<em>t</em></sub> and <em>W</em><sub><em>t</em>&#215;<em>t</em></sub>
+            for some <em>t</em> have sub-polynomial tree-independence,
+            <em>O</em>(2<sup><em>O</em>((log <em>n</em>)<sup>1-&#949;</sup>)</sup>) &#8212; this last bound is our
+            main contribution. The bound yields 2<sup><em>n</em><sup>o(1)</sup></sup>-time algorithms for many problems on
+            {<em>K</em><sub><em>t</em>,<em>t</em></sub>, <em>W</em><sub><em>t</em>&#215;<em>t</em></sub>}-induced
+            minor free graphs, and partially resolves a conjecture of Chudnovsky, E S, and Lokshtanov
+            [arXiv, 2025].
           </p>
         </div>
       </div>
@@ -121,7 +107,8 @@
             motivating problems in the area. This conjecture was recently disproved, but here we prove a slight
             variant that retains much of the algorithmic significance. As part of the proof, we introduce the notion
             of independence-containers, which can be viewed as a generalization of the set of all maximal cliques of a
-            graph, and is of independent interest.
+            graph, and is of independent interest. Independence-containers are later used in
+            <a href="https://arxiv.org/abs/2607.12090" target="_blank" rel="noopener noreferrer">our classification of induced-minor-closed classes</a>.
           </p>
         </div>
       </div>
